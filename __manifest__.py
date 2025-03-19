@@ -8,7 +8,7 @@
     'description': """
     This module adds a new field 'oferta' for can send message with imagen in push.
     """,
-    'depends': ['base','product'],
+    'depends': ['base','product','contacts'],
     'data': [
        'views/button_send_push.xml',
     ],

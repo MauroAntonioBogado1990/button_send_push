@@ -13,16 +13,16 @@ class ProductTemplate(models.Model):
 
     def boton_enviar_notificacion(self):
         """Enviar notificación manualmente desde el botón en product.template."""
-        clientes = self.env['res.partner'].search([('app_server_url', '!=', False)])
+        clientes = self.env['res.partner'].search([('rpc_url', '!=', False)])
         for cliente in clientes:
-            rpc_url = cliente.app_server_url  # URL del servidor cliente
+            rpc_url = cliente.rpc_url  # URL del servidor cliente
             try:
                 server = xmlrpc.client.ServerProxy(rpc_url)
 
-                # Generar el mensaje con el tipo de oferta
+                # Genera el mensaje con el tipo de oferta
                 mensaje = f"Hola {cliente.name}, ¡{self.oferta}! Producto: {self.name}"
 
-                # Convertir la imagen a base64 para enviarla
+                # se convierte la imagen a base64 para enviarla
                 if self.image_1920:
                     imagen_base64 = base64.b64encode(self.image_1920).decode('utf-8')  # Imagen en base64
                 else:
