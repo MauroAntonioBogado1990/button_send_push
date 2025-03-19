@@ -2,7 +2,7 @@
 {
     'name': 'Button Send Push Notification',
     'version': '17.0.1.0.0',
-    'author': 'Mauro Bogado, HC Sinergia',
+    'author': 'Mauro Bogado',
     'category': 'Project',
     'summary': 'Button and Field that send message push',
     'description': """
