@@ -1,0 +1,28 @@
+<odoo>
+<data>
+<record id="view_product_template_form_inherit_ofer" model="ir.ui.view">
+    <field name="name">product.template.form.offer</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_form_view" />
+    <field name="arch" type="xml">
+        <xpath expr="//div[@name='options']" position="after">
+            <group>
+                <field name="oferta" />
+                <field name="enviar_push" />
+                
+            </group>
+        </xpath>
+         <xpath expr="//header" position="inside">
+            <button name="boton_enviar_notificacion" 
+                    string="Enviar Notificación" 
+                    type="object" 
+                    class="oe_highlight" 
+                    icon="fa-bell"
+                    />
+           
+        </xpath> 
+        
+    </field>
+</record>
+</data>
+</odoo>
